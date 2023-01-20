@@ -2,6 +2,8 @@ const React = require("react")
 const Def = require("../default")
 
 function Index (data) {
+    //format the data in the places array into HTML so that a web page can display it.  
+    //map.()
     let placesFormatted = data.places.map((place) => {
         return (
                 <div>

@@ -19,6 +19,18 @@ app.get("/places", (req, res) => {
     res.render("Index")
 })
 
+app.get("/new", (req, res) => {
+    res.render('places/newPage')
+})
+
+app.get("/show", (req, res) => {
+    res.render('places/showPage')
+})
+
+app.get("/edit", (req, res) => {
+    res.render('places/editPage')
+})
+
 app.get('*', (req, res) => {
     res.render("error404")
 })
