@@ -16,7 +16,7 @@ app.get('/', (req, res) => {
 }) 
 
 app.get("/places", (req, res) => {
-    res.send("Places index Page")
+    res.render("Index")
 })
 
 app.get('*', (req, res) => {
