@@ -20,7 +20,7 @@ app.get("/places", (req, res) => {
 })
 
 app.get('*', (req, res) => {
-    res.status(404).send('<h1>You have reach a 404</h1>')
+    res.render("error404")
 })
 
 app.listen(process.env.PORT, () => {
