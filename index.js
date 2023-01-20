@@ -9,6 +9,10 @@ app.get('/', (req, res) => {
     res.send("Hello World")
 }) 
 
+app.get("/places", (req, res) => {
+    res.send("Places index Page")
+})
+
 app.get('*', (req, res) => {
     res.status(404).send('<h1>You have reach a 404</h1>')
 })
