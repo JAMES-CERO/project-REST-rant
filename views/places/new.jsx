@@ -7,28 +7,28 @@ function newPage() {
             <main>
                 <h1>Add a Resturant</h1>
                 <form method='POST' action='/places'>
-                    <div>
+                    <div className='form-group'>
                         <label htmlFor='name' >Rest Name</label>
-                        <imput id="name" name="name" required/>
+                        <input className='form-control'  id="name" name="name" required/>
                     </div>
-                    <div>
+                    <div className='form-group'>
                         <label htmlFor='pic' >Place Picture</label>
-                        <imput type="url" id="pic" name="pic"/>
+                        <input className='form-control' type="url" id="pic" name="pic"/>
                     </div>
-                    <div>
+                    <div className='form-group'>
                         <label >City</label>
-                        <imput id="city" name="city"></imput>
+                        <input className='form-control' id="city" name="city"/>
                     </div>
-                    <div>
+                    <div className='form-group'>
                         <label htmlFor='state' >State</label>
-                        <imput id="state" name="state"/>
+                        <input className='form-control' id="state" name="state"/>
                    </div>
-                   <div>
+                   <div className='form-group'>
                         <label htmlFor='cuisines' >Cuisines</label>
-                        <imput id="cuisines" name="cuisines" required/>
+                        <input className='form-control' id="cuisines" name="cuisines" required/>
                     </div>
                     
-                    <input type="submit" value="Add Place" />
+                    <input className='btn btn-primary' type="submit" value="Add Place" />
                 </form>
             </main>
         </Def>

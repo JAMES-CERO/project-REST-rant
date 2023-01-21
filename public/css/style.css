@@ -1,8 +1,21 @@
 h1{
     text-align: center;
     color: cornflowerblue;
+    font-family: cursive;
 } 
 img{
     width: 600px;
     height: 400px;
+}
+.home-menu
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3%;
+    background-color: rgb(206, 225, 246);
+
+}
+button{
+    background: radial-gradient(circle at 100%, #333, #eee 75%, rgb(199, 194, 194) 75%);
 }
