@@ -6,9 +6,15 @@ function Index (data) {
     //map.()
     let placesFormatted = data.places.map((place) => {
         return (
-                <div>
+                <div className="col-sm-6">
                     <h1>{place.name}</h1>
+                    <p className="text-center">
+                        {place.cuisines}
+                    </p>
                     <img src={place.pic} alt={place.name} ></img>
+                    <p>
+                        Located in {place.city}, {place.state}
+                    </p>
                 </div>
         )
     })
@@ -16,8 +22,10 @@ function Index (data) {
     return (
         <Def>
             <main>
-                <h1> Places Index Page</h1>
+                <h1>Places to rant !</h1>
+                <div className="row">
                 {placesFormatted}
+                </div>
             </main>
         </Def>
     )
