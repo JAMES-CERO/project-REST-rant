@@ -12,7 +12,7 @@ function Index (data) {
                         {place.cuisines}
                     </p>
                     <img src={place.pic} alt={place.name} ></img>
-                    <p>
+                    <p className="text-center">
                         Located in {place.city}, {place.state}
                     </p>
                 </div>
@@ -24,7 +24,7 @@ function Index (data) {
             <main>
                 <h1>Places to rant !</h1>
                 <div className="row">
-                {placesFormatted}
+                    {placesFormatted}
                 </div>
             </main>
         </Def>

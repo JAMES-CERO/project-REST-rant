@@ -12,9 +12,10 @@ function home (){
             <div>
                 Photo By <a href="https://unsplash.com/@alexandermils">Alexander Mils</a> on <a href="https://unsplash.com/photos/5X8oLkzZ1fI">Unsplash</a>
             </div>
-            <a href="/places" >
-                    <button className="btn-primary" > Places Page</button>
-                </a>
+            <a href="/places">
+                <button className="btn-primary">Places Page</button>
+            </a>
+
         </main>
     </Def>
     )
