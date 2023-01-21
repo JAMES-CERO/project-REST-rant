@@ -1,6 +1,11 @@
 const router = require('express').Router()
 
 
+router.get("/new", (req, res) => {
+  res.render("places/new")
+})
+
+
 router.get('/', (req, res) => {
     //use a work-around to mock up data to use.
     let places = [{
@@ -22,5 +27,6 @@ router.get('/', (req, res) => {
     // res.send('GET /places')  //  first route in places.js. We can use the index page (i.e., the GET route that will eventually show a list of all places).
        res.render("places/index", {places})
 })
+
 
 module.exports = router
