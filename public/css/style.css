@@ -14,7 +14,6 @@ img{
     align-items: center;
     margin-top: 3%;
     background-color: rgb(206, 225, 246);
-
 }
 button{
     background: radial-gradient(circle at 100%, #333, #eee 75%, rgb(199, 194, 194) 75%);
