@@ -1,3 +1,7 @@
+body{
+    display: flex;
+  flex-direction: column;
+}
 h1{
     text-align: center;
     color: cornflowerblue;
@@ -18,3 +22,19 @@ img{
 button{
     background: radial-gradient(circle at 100%, #333, #eee 75%, rgb(199, 194, 194) 75%);
 }
+#page-container {
+    display: flex;
+    position: relative;
+   
+  }
+  
+  #content-wrap {
+    padding-bottom: 2.5rem;    /* Footer height */
+  }
+  
+  #footer {
+    position: absolute;
+    bottom: 0;
+    width: 20%;
+    height: 2.5rem;            /* Footer height */
+  }
