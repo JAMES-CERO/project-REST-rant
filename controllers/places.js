@@ -46,52 +46,60 @@ router.get('/:id', (req, res) => {
 
 
 
-router.get('/:id/edit', (req, res) => {
+// router.get('/:id/edit', (req, res) => {
+//   let id = Number(req.params.id)
+//   if (isNaN(id)) {
+//       res.render('error404')
+//   }
+//   else if (!places[id]) {
+//       res.render('error404')
+//   }
+//   else {
+//     res.render('places/edit', { place: places[id] })
+//   }
+// })
+
+
+
+// router.put('/:id/edit', (req, res) => {
+//   let id = Number(req.params.id)
+//   if (isNaN(id)) {
+//       res.render('error404')
+//   }
+//   else if (!places[id]) {
+//       res.render('error404')
+//   }
+//   else {
+//       //dig into req.body and make sre data is valid
+
+//       if(!req.body.pic){
+//         req.body.pic = "https://static.thenounproject.com/png/396915-200.png"
+//       }
+//       if(!req.body.city) {
+//         req.body.city = "Somewhere"
+//       }
+//       if(!req.body.state) {
+//         req.body.state = "USA"
+//       }
+//       // save data into places[id]
+//       res.redirect(`/places/${id}`)
+//       console.log("here i am")
+//   }
+// })
+
+router.delete('/:id', (req, res) => {
   let id = Number(req.params.id)
   if (isNaN(id)) {
-      res.render('error404')
+    res.render('error404')
   }
   else if (!places[id]) {
-      res.render('error404')
+    res.render('error404')
   }
   else {
-    res.render('places/edit', { place: places[id] })
+    places.splice(id, 1)
+    res.redirect('/places')
   }
 })
-
-
-
-router.put('/:id/edit', (req, res) => {
-  let id = Number(req.params.id)
-  if (isNaN(id)) {
-      res.render('error404')
-  }
-  else if (!places[id]) {
-      res.render('error404')
-  }
-  else {
-      //dig into req.body and make sre data is valid
-
-      if(!req.body.pic){
-        req.body.pic = "https://static.thenounproject.com/png/396915-200.png"
-      }
-      if(!req.body.city) {
-        req.body.city = "Somewhere"
-      }
-      if(!req.body.state) {
-        req.body.state = "USA"
-      }
-      // save data into places[id]
-      res.redirect(`/places/${id}`)
-      console.log("here i am")
-  }
-})
-
-
-
-
-
-
 
 
 module.exports = router
