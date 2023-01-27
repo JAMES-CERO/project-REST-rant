@@ -1,7 +1,6 @@
 //modules & globals 
 require('dotenv').config()
 const express = require("express")
-// const home = require('./views/home')
 const app = express()
 const methodOverride = require("method-override")
 
@@ -25,6 +24,16 @@ app.get('/', (req, res) => {
     res.render("home")
 }) 
 
+
+app.get('*', (req, res) => {
+    res.render("error404")
+})
+
+app.listen(process.env.PORT, () => {
+    console.log('I am Awake')
+})
+
+
 // app.get("/places", (req, res) => {
 //     res.render("Index")
 // })
@@ -40,11 +49,3 @@ app.get('/', (req, res) => {
 // app.get("/edit", (req, res) => {
 //     res.render('places/edit')
 // })
-
-app.get('*', (req, res) => {
-    res.render("error404")
-})
-
-app.listen(process.env.PORT, () => {
-    console.log('I am Awake')
-})
