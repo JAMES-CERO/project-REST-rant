@@ -64,7 +64,10 @@ button{
     text-decoration: none;
   }
 
-  /* main{
-    margin-right: 20px;
-    margin-left: 20px; 
-  } */
+ h2{
+  color: rgb(254, 84, 113);
+ }
+
+ .showPlace{
+  padding-left: 2cm;
+ }
