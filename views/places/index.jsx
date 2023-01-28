@@ -4,11 +4,11 @@ const Def = require("../default")
 function index (data) {
     //format the data in the places array into HTML so that a web page can display it.  
     //map.()
-    let placesFormatted = data.places.map((place, index) => {
+    let placesFormatted = data.places.map((place) => {
         return (
           <div className="col-sm-6">
             <h2>
-              <a href={`/places/${index}`} >
+              <a href={`/places/${place.id}`} >
                 {place.name}
               </a>
             </h2>
