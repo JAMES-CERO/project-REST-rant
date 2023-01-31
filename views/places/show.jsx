@@ -9,16 +9,19 @@ function show(data) {
                 <div className='row'>
                     <div >
                         <img src={data.place.pic} alt={data.place.name} />
+                        <h3> Location! 🌎 {data.place.city} -- {data.place.state}</h3>
                     </div>
                     <br/>
                     <div className='showPlace' >
                         <h1>{data.place.name}</h1>
-                        <h2> {data.place.cuisines}</h2>
                         <h1> Rating! ⭐</h1>
                         <p>Not Rated Yet!</p>
 
-                        <h1> Location! 🌎</h1>
-                        <h2> {data.place.city} -- {data.place.state}</h2>
+                        {/* <h1> Location! 🌎</h1> */}
+                        <h2> Description</h2>
+                        <h3>{data.place.showEstablished()}</h3>
+                        <h4> {data.place.cuisines}</h4>
+
                         <a href={`/places/${data.id}/edit`}  className='btn btn-warning' >Edit</a>
                         <form method='POST'action={`/places/${data.id}?_method=DELETE`} >
                             <button type='submit' className='btn btn-danger' >
