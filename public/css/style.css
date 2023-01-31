@@ -6,14 +6,15 @@ h1{
     text-align: center;
     color: cornflowerblue;
     font-family: cursive;
+    font-size: 3vmax;
 } 
 img{
     width: 600px;
     height: 400px;   
 }
 #homeImg{
-  width: 80vmax;
-  height: 50vmax;
+  width: 60vmax;
+  height: 30vmax;
 }
 .home-menu
 {
@@ -46,7 +47,7 @@ button{
   nav{
     background-color: cornflowerblue;
     padding: 10px;
-    width: 80vmax;
+    width: 60vmax;
     display: flex;
     justify-content:space-around;
     align-items: center;
@@ -68,7 +69,7 @@ button{
 
   nav a{
     color: white;
-    font-size: 3vmax;
+    font-size: 2.5vmax;
   }
 
   nav a:hover {
