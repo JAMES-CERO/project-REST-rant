@@ -14,6 +14,7 @@ function new_form (data) {
         <Def>
             <main>
                 <h1>Add a Resturant</h1>
+                {/* error message for validation data */}
                 {message}
                 <hr/>
                 <form method='POST' action='/places'>
