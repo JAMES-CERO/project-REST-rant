@@ -27,8 +27,10 @@ function index (data) {
 
     return (
         <Def>
-            <main>
-                <h1>Places to rant !</h1>
+            <main> 
+                <br/>
+                <h1>PLACES TO RANT! !</h1>
+                <hr/>
                 <div className="row">
                     {placesFormatted}
                 </div>
