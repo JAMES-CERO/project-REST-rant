@@ -2,16 +2,22 @@ const React = require('react')
 const Def = require('../default')
 
 function show(data) {
+   console.log(data.place._id)
     let comments = (
         <h3 className="inactive">
           No comments yet!
+        </h3>
+      )
+      let rating = (
+        <h3 className='inactive'>
+          Not Rated Yet!
         </h3>
       )
       if (data.place.comments.length) {
         comments = data.place.comments.map(c => {
           return (
             <div className="border">
-              <h2 className="rant">{c.rant ? 'Rant! ðŸ˜¡' : 'Rave! ðŸ˜»'}</h2>
+              <h2 className="rant">{c.rant ? "👌 ": "👌"}</h2>
               <h4>{c.content}</h4>
               <h3>
                 <stong>- {c.author}</stong>
@@ -35,15 +41,16 @@ function show(data) {
                     <div className='showPlace' >
                         <h1>{data.place.name}</h1>
                         <h1> Rating! ⭐</h1>
-                        <p>Not Rated Yet!</p>
+                        {rating}
+                        <br/>
 
                         {/* <h1> Location! 🌎</h1> */}
                         <h2> Description</h2>
                         <h3>{data.place.showEstablished()}</h3>
                         <h4> {data.place.cuisines}</h4>
 
-                        <a href={`/places/${data.id}/edit`}  className='btn btn-warning' >Edit</a>
-                        <form method='POST'action={`/places/${data.id}?_method=DELETE`} >
+                        <a href={`/places/${data.place._id}/edit`}  className='btn btn-warning' >Edit</a>
+                        <form method='POST'action={`/places/${data.place._id}?_method=DELETE`} >
                             <button type='submit' className='btn btn-danger' >
                                 Delete !
                             </button>
@@ -53,7 +60,7 @@ function show(data) {
                 <div>
                     <h2>Coments! 🎰 </h2>
                     {comments}
-                    <form  method='POST' action={`places/${data.id}`}> 
+                    <form  method='POST' action={`/places/${data.place._id}/comment`}> 
                     
                     <div className='form-group'>
                         <label htmlFor='author' >Author</label>
