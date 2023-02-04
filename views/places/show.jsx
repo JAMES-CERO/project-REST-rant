@@ -2,6 +2,26 @@ const React = require('react')
 const Def = require('../default')
 
 function show(data) {
+    let comments = (
+        <h3 className="inactive">
+          No comments yet!
+        </h3>
+      )
+      if (data.place.comments.length) {
+        comments = data.place.comments.map(c => {
+          return (
+            <div className="border">
+              <h2 className="rant">{c.rant ? 'Rant! ðŸ˜¡' : 'Rave! ðŸ˜»'}</h2>
+              <h4>{c.content}</h4>
+              <h3>
+                <stong>- {c.author}</stong>
+              </h3>
+              <h4>Rating: {c.stars}</h4>
+            </div>
+
+          )
+        })
+      }
     return (
         <Def>
             <main>
@@ -32,9 +52,26 @@ function show(data) {
                 </div>
                 <div>
                     <h2>Coments! 🎰 </h2>
-                    <p>
-                        No coments Yet!
-                    </p>
+                    {comments}
+                    <form  method='POST' action={`places/${data.id}`}> 
+                    
+                    <div className='form-group'>
+                        <label htmlFor='author' >Author</label>
+                        <input className='form-control'  id="author" name="author" required/>
+                    </div>
+                    <div className='form-group'>
+                        <label htmlFor='content' >Conten</label>
+                        <input className='form-control'  id="content" name="content"/>
+                    </div>
+                    <div className='form-group'>
+                        <label htmlFor='stars' className='form-label' >Star-ranking</label>
+                        <input type="range"  className='form-range' min="0" max="5" id="stars" name="stars"/>
+                    </div>
+                    <div className='form-group'>
+                        <label htmlFor='rant' >Rant</label><input type="checkbox"  id="rant" name="rant"/>
+                   </div>
+                   <input className="btn btn-primary" type="submit" value="comments" />
+                    </form>
                 </div>
 
             </main>
