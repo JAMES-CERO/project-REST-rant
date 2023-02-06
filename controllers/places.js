@@ -1,4 +1,5 @@
 const router = require('express').Router()
+const { Error } = require('mongoose')
 const db = require("../models")
 
 router.get('/', (req, res) => {
@@ -76,13 +77,45 @@ router.post('/:id/comment', (req, res) => {
     })
 })
 
+//EDIT
+
+router.get("/:id/edit", (req, res) => {
+  db.Place.findById(req.params.id)
+  .then( place => {
+    res.render("places/edit", {place})
+  })
+  .catch(err => {
+    console.log("error edit ", err)
+    res.render("error404")
+  })
+})
+
+//UPDATE
+
+router.put("/:id", (req, res) => {
+  db.Place.findByIdAndUpdate(req.params.id)
+  .then(() => {
+    res.redirect(`/places/${req.params.id}`)
+  })
+  .catch(err => {
+    console.log("error update", err)
+    res.render("error404")
+  })
+})
+
+//DELETE
 
 router.delete("/:id", (req, res) => {
   db.Place.findByIdAndDelete(req.params.id)
     .then(() => {
       res.redirect("/places")
     })
+    .catch(err => {
+      console.log("error delete", err)
+      res.render("error404")
+    })
 })
+
 
 
 module.exports = router
