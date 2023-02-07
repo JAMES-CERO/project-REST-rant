@@ -93,7 +93,7 @@ router.get("/:id/edit", (req, res) => {
 //UPDATE
 
 router.put("/:id", (req, res) => {
-  db.Place.findByIdAndUpdate(req.params.id)
+  db.Place.findByIdAndUpdate(req.params.id, req.body)
   .then(() => {
     res.redirect(`/places/${req.params.id}`)
   })
