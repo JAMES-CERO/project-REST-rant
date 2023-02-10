@@ -33,6 +33,7 @@ app.listen(process.env.PORT, () => {
     console.log('I am Awake')
 })
 
+module.exports = app;
 
 // app.get("/places", (req, res) => {
 //     res.render("Index")
